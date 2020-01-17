@@ -16,15 +16,15 @@
         <script src="static/sw.js" type="text/javascript"/>
 
     </head>
-    <body>
-        <div>
-            <h1>share-a-ride</h1>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col"><a href="/ride">I ride</a></div>
-                    <div class="col"><a href="/jump_in">I want to jump in</a></div>
-                </div>
+    <body class="bg-light">
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>share-a-ride</h2>
+                <p class="lead">super-cool app to share rides and save the planet!</p>
+            </div>
+            <div class="row">
+                <div class="col text-center"><a href="/ride">I ride</a></div>
+                <div class="col text-center"><a href="/jump_in">I want to jump in</a></div>
             </div>
         </div>
     </body>

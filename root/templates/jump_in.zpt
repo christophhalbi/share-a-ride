@@ -16,9 +16,12 @@
         <script src="static/sw.js" type="text/javascript"/>
 
     </head>
-    <body>
-        <div>
-            <h1>share-a-ride: jump in</h1>
+    <body class="bg-light">
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>share-a-ride</h2>
+                <p class="lead">super-cool app to share rides and save the planet!</p>
+            </div>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -27,70 +30,65 @@
                 </ol>
             </nav>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col col-4">
-                        <h2>Find a ride</h2>
-                        <form>
-                            <div class="input-group flex-nowrap mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="addon-wrapping">From</span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col col-8">
-                        <h2>Rides</h2>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Driver</th>
-                                    <th scope="col">From</th>
-                                    <th scope="col">To</th>
-                                    <th scope="col">Datetime</th>
-                                    <th scope="col">Seats</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Max Mustermann</td>
-                                    <td>Leonding, Weg 1</td>
-                                    <td>Urfahr, Haus 1</td>
-                                    <td>Montag, 20.01.2020 12:00</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Max Mustermann</td>
-                                    <td>Leonding, Weg 1</td>
-                                    <td>Urfahr, Haus 1</td>
-                                    <td>Montag, 20.01.2020 12:00</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Max Mustermann</td>
-                                    <td>Leonding, Weg 1</td>
-                                    <td>Urfahr, Haus 1</td>
-                                    <td>Montag, 20.01.2020 12:00</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Max Mustermann</td>
-                                    <td>Leonding, Weg 1</td>
-                                    <td>Urfahr, Haus 1</td>
-                                    <td>Montag, 20.01.2020 12:00</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Max Mustermann</td>
-                                    <td>Leonding, Weg 1</td>
-                                    <td>Urfahr, Haus 1</td>
-                                    <td>Montag, 20.01.2020 12:00</td>
-                                    <td>2</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="mb-3">Find a ride</h4>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Quicksearch" aria-describedby="addon-wrapping" required="required"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Rides</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Driver</th>
+                                <th scope="col">From</th>
+                                <th scope="col">To</th>
+                                <th scope="col">Datetime</th>
+                                <th scope="col">Seats</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Max Mustermann</td>
+                                <td>Leonding, Weg 1</td>
+                                <td>Urfahr, Haus 1</td>
+                                <td>Montag, 20.01.2020 12:00</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Max Mustermann</td>
+                                <td>Leonding, Weg 1</td>
+                                <td>Urfahr, Haus 1</td>
+                                <td>Montag, 20.01.2020 12:00</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Max Mustermann</td>
+                                <td>Leonding, Weg 1</td>
+                                <td>Urfahr, Haus 1</td>
+                                <td>Montag, 20.01.2020 12:00</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Max Mustermann</td>
+                                <td>Leonding, Weg 1</td>
+                                <td>Urfahr, Haus 1</td>
+                                <td>Montag, 20.01.2020 12:00</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Max Mustermann</td>
+                                <td>Leonding, Weg 1</td>
+                                <td>Urfahr, Haus 1</td>
+                                <td>Montag, 20.01.2020 12:00</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

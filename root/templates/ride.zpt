@@ -16,9 +16,12 @@
         <script src="static/sw.js" type="text/javascript"/>
 
     </head>
-    <body>
-        <div>
-            <h1>share-a-ride: ride</h1>
+    <body class="bg-light">
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2>share-a-ride</h2>
+                <p class="lead">super-cool app to share rides and save the planet!</p>
+            </div>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -27,36 +30,39 @@
                 </ol>
             </nav>
 
-            <div class="container">
-                <h2>Offer a ride</h2>
-                <form>
-                    <div class="input-group flex-nowrap mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">From</span>
+            <div class="row">
+                <div class="col">
+                    <h4 class="mb-3">Offer a ride</h4>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="from">From</label>
+                                <input type="text" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="to">To</label>
+                                <input type="text" class="form-control" placeholder="Leonding, Kornstraße 2" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
+                            </div>
                         </div>
-                        <input type="text" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
-                    </div>
-                    <div class="input-group flex-nowrap mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">To</span>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="on">On</label>
+                                <input type="date" aria-label="on" class="form-control" required="required"/>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="at">At</label>
+                                <input type="time" aria-label="at" class="form-control" required="required"/>
+                            </div>
                         </div>
-                        <input type="text" class="form-control" placeholder="Leonding, Kornstraße 2" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Datetime</span>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="to">Seats</label>
+                                <input type="number" class="form-control" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
+                            </div>
                         </div>
-                        <input type="date" aria-label="on" class="form-control" required="required"/>
-                        <input type="time" aria-label="at" class="form-control" required="required"/>
-                    </div>
-                    <div class="input-group flex-nowrap mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">Seats</span>
-                        </div>
-                        <input type="number" class="form-control" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
