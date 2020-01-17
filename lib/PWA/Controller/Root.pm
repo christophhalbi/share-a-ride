@@ -28,11 +28,12 @@ The root page (/)
 
 =cut
 
-sub index :Path :Args(0) {
+sub index :Path('index') :Args(0) {
     my ( $self, $c ) = @_;
 
-    # Hello World
-    $c->response->body( $c->welcome_message );
+    $c->stash({
+        template => 'index.zpt',
+    });
 }
 
 =head2 default
@@ -47,13 +48,23 @@ sub default :Path {
     $c->response->status(404);
 }
 
-=head2 end
+=head2 render
 
 Attempt to render a view, if needed.
 
 =cut
 
-sub end : ActionClass('RenderView') {}
+sub render :ActionClass('RenderView') {}
+
+=head2 end
+
+=cut
+
+sub end :Private {
+    my ( $self, $c ) = @_;
+
+    $c->forward('render');
+}
 
 =head1 AUTHOR
 
