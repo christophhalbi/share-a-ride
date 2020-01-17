@@ -1,6 +1,13 @@
 {
   "short_name": "share-a-ride",
   "name": "share-a-ride",
+  "icons": [
+    {
+      "src": "/static/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
   "start_url": "/index",
   "background_color": "#3367D6",
   "display": "standalone",
