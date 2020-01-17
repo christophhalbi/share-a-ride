@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:tal="http://purl.org/petal/1.0/" xmlns:metal="http://xml.zope.org/namespaces/metal">
+    <head>
+        <title>share-a-ride: ride</title>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <link rel="manifest" href="static/manifest.json"/>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+
+        <script src="static/app.js" type="text/javascript"/>
+        <script src="static/sw.js" type="text/javascript"/>
+
+    </head>
+    <body>
+        <div>
+            <h1>share-a-ride: ride</h1>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ride</li>
+                </ol>
+            </nav>
+
+            <div class="container">
+                <h2>Offer a ride</h2>
+                <form>
+                    <div class="input-group flex-nowrap mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">From</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
+                    </div>
+                    <div class="input-group flex-nowrap mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">To</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Leonding, Kornstraße 2" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Datetime</span>
+                        </div>
+                        <input type="date" aria-label="on" class="form-control" required="required"/>
+                        <input type="time" aria-label="at" class="form-control" required="required"/>
+                    </div>
+                    <div class="input-group flex-nowrap mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">Seats</span>
+                        </div>
+                        <input type="number" class="form-control" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

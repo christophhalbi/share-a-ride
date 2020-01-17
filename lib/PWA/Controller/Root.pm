@@ -24,8 +24,6 @@ PWA::Controller::Root - Root Controller for PWA
 
 =head2 index
 
-The root page (/)
-
 =cut
 
 sub index :Path('index') :Args(0) {
@@ -33,6 +31,30 @@ sub index :Path('index') :Args(0) {
 
     $c->stash({
         template => 'index.zpt',
+    });
+}
+
+=head2 ride
+
+=cut
+
+sub ride :Path('ride') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    $c->stash({
+        template => 'ride.zpt',
+    });
+}
+
+=head2 jump_in
+
+=cut
+
+sub jump_in :Path('jump_in') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    $c->stash({
+        template => 'jump_in.zpt',
     });
 }
 

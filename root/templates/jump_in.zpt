@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:tal="http://purl.org/petal/1.0/" xmlns:metal="http://xml.zope.org/namespaces/metal">
+    <head>
+        <title>share-a-ride: jump in</title>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <link rel="manifest" href="static/manifest.json"/>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+
+        <script src="static/app.js" type="text/javascript"/>
+        <script src="static/sw.js" type="text/javascript"/>
+
+    </head>
+    <body>
+        <div>
+            <h1>share-a-ride: jump in</h1>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="jump_in">Jump in</li>
+                </ol>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col col-4">
+                        <h2>Find a ride</h2>
+                        <form>
+                            <div class="input-group flex-nowrap mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping">From</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col col-8">
+                        <h2>Rides</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Driver</th>
+                                    <th scope="col">From</th>
+                                    <th scope="col">To</th>
+                                    <th scope="col">Datetime</th>
+                                    <th scope="col">Seats</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Max Mustermann</td>
+                                    <td>Leonding, Weg 1</td>
+                                    <td>Urfahr, Haus 1</td>
+                                    <td>Montag, 20.01.2020 12:00</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Max Mustermann</td>
+                                    <td>Leonding, Weg 1</td>
+                                    <td>Urfahr, Haus 1</td>
+                                    <td>Montag, 20.01.2020 12:00</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Max Mustermann</td>
+                                    <td>Leonding, Weg 1</td>
+                                    <td>Urfahr, Haus 1</td>
+                                    <td>Montag, 20.01.2020 12:00</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Max Mustermann</td>
+                                    <td>Leonding, Weg 1</td>
+                                    <td>Urfahr, Haus 1</td>
+                                    <td>Montag, 20.01.2020 12:00</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>Max Mustermann</td>
+                                    <td>Leonding, Weg 1</td>
+                                    <td>Urfahr, Haus 1</td>
+                                    <td>Montag, 20.01.2020 12:00</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
