@@ -3,6 +3,7 @@ use Moose;
 use namespace::autoclean;
 
 use PWA::BusinessLogic::Rides;
+use PWA::Model;
 
 has 'bl_rides' => (
     is      => 'ro',
@@ -77,7 +78,11 @@ sub jump_in :Path('jump_in') :Args(0) {
 sub get_rides :Path('get_rides') :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->stash({ results => [ map { $_->as_json } $self->bl_rides->rides ] });
+    $c->stash({
+        results => [
+            map { $_->as_json } $self->bl_rides->rides(PWA::Model->new( source => $c->session ))
+        ]
+    });
 
     $c->forward('View::JSON');
 }
