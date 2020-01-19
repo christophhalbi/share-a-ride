@@ -2,6 +2,18 @@ package PWA::Controller::Root;
 use Moose;
 use namespace::autoclean;
 
+use PWA::BusinessLogic::Rides;
+
+has 'bl_rides' => (
+    is      => 'ro',
+    isa     => 'Object',
+    lazy    => 1,
+    default => sub {
+
+        return PWA::BusinessLogic::Rides->new;
+    }
+);
+
 BEGIN { extends 'Catalyst::Controller' }
 
 #
@@ -56,6 +68,18 @@ sub jump_in :Path('jump_in') :Args(0) {
     $c->stash({
         template => 'jump_in.zpt',
     });
+}
+
+=head2 get_rides
+
+=cut
+
+sub get_rides :Path('get_rides') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    $c->stash({ results => [ map { $_->as_json } $self->bl_rides->rides ] });
+
+    $c->forward('View::JSON');
 }
 
 =head2 default
