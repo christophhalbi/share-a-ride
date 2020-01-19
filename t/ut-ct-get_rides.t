@@ -67,7 +67,6 @@ subtest "get_rides result" => sub {
 
             ],
         },
-        "empty",
     );
 };
 

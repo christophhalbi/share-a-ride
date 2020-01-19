@@ -87,16 +87,29 @@ sub get_rides :Path('get_rides') :Args(0) {
     $c->forward('View::JSON');
 }
 
-=head2 default
-
-Standard 404 error page
+=head2 post_ride
 
 =cut
 
-sub default :Path {
+sub post_ride :Path('post_ride') :Args(0) {
     my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
-    $c->response->status(404);
+
+    my ($validation_result) = $self->bl_rides->validate($c->req->body_parameters);
+    if ($validation_result->success) {
+
+        my $valid = $validation_result->valid;
+
+        $c->stash({
+            validation_errors => {},
+            saved             => $self->bl_rides->save_ride(PWA::Model->new( source => $c->session ), $valid),
+        });
+    }
+    else {
+
+        $c->stash->{validation_errors} = $validation_result->msgs;
+    }
+
+    $c->forward('View::JSON');
 }
 
 =head2 render

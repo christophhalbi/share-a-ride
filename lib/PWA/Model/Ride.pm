@@ -20,4 +20,18 @@ sub as_json {
     return $self->data;
 }
 
+=head2 validation_profile
+
+=cut
+
+sub validation_profile {
+    return {
+        required => [qw(from to at on seats)],
+        msgs     => {
+            format  => '%s',
+            missing => 'missing',
+        }
+    }
+}
+
 1;
