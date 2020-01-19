@@ -55,7 +55,8 @@ sub ride :Path('ride') :Args(0) {
     my ( $self, $c ) = @_;
 
     $c->stash({
-        template => 'ride.zpt',
+        template   => 'ride.zpt',
+        uri_action => $c->uri_for('post_ride'),
     });
 }
 
