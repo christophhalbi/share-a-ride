@@ -11,7 +11,7 @@ has 'source' => (
 sub get {
     my $self = shift;
 
-    return ($self->source->{rides} or ());
+    return @{ $self->source->{rides} or [] };
 }
 
 sub add {

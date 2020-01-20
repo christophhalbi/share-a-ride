@@ -22,12 +22,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 body: formData
             })
             .then((response) => response.json())
-            .then((result) => {
-                console.log('Success:', result);
+            .then((json) => {
+
+                window.location = '/jump_in';
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
+        });
+    }
+
+    const rides = document.getElementById('rides');
+    if (rides) {
+
+        fetch(rides.dataset.uri, {
+            method: 'GET'
+        })
+        .then((response) => response.json())
+        .then((json) => {
+
+            var tb = document.querySelector('#rides_table tbody');
+            var t  = document.querySelector('#ride_row');
+            td = t.content.querySelectorAll('td');
+
+            json.results.forEach(function(result) {
+
+                td[0].textContent = 'Max';
+                td[1].textContent = result.from;
+                td[2].textContent = result.to;
+                td[3].textContent = result.on + ' ' + result.at;
+                td[4].textContent = result.seats;
+
+                var clone = document.importNode(t.content, true);
+                tb.appendChild(clone);
+            });
+        })
+        .catch((error) => {
+            console.error('Error:', error);
         });
     }
 })

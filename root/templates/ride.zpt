@@ -37,30 +37,30 @@
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <label for="from">From</label>
-                                <input type="text" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
+                                <input type="text" name="from" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
                             </div>
 
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-4">
+                            <div class="col-md-4 mb-4">
                                 <label for="on">On</label>
-                                <input type="date" aria-label="on" class="form-control" required="required"/>
+                                <input type="date" name="on" aria-label="on" class="form-control" required="required"/>
                             </div>
-                            <div class="col-md-6 mb-4">
+                            <div class="col-md-4 mb-4">
                                 <label for="at">At</label>
-                                <input type="time" aria-label="at" class="form-control" required="required"/>
+                                <input type="time" name="at" aria-label="at" class="form-control" required="required"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <label for="to">To</label>
-                                <input type="text" class="form-control" placeholder="Leonding, Kornstraße 2" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
+                                <input type="text" name="to" class="form-control" placeholder="Leonding, Kornstraße 2" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 mb-4">
+                            <div class="col-md-3 mb-4">
                                 <label for="to">Seats</label>
-                                <input type="number" class="form-control" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
+                                <input type="number" name="seats" class="form-control" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>

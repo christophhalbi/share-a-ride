@@ -68,7 +68,8 @@ sub jump_in :Path('jump_in') :Args(0) {
     my ( $self, $c ) = @_;
 
     $c->stash({
-        template => 'jump_in.zpt',
+        template  => 'jump_in.zpt',
+        uri_rides => $c->uri_for('get_rides'),
     });
 }
 
