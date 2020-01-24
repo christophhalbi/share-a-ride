@@ -25,7 +25,7 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Ride</li>
                 </ol>
             </nav>
@@ -36,30 +36,29 @@
                     <form id="save_ride_form" method="post" tal:attributes="action uri_action">
                         <div class="row">
                             <div class="col-md-12 mb-4">
-                                <label for="from">From</label>
-                                <input type="text" name="from" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
+                                <label for="start_from">From</label>
+                                <input type="text" name="start_from" class="form-control" placeholder="Linz, Teststraße 1" aria-label="From" aria-describedby="addon-wrapping" required="required"/>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-md-4 mb-4">
-                                <label for="on">On</label>
-                                <input type="date" name="on" aria-label="on" class="form-control" required="required"/>
+                                <label for="start_on">On</label>
+                                <input type="date" name="start_on" aria-label="on" class="form-control" required="required"/>
                             </div>
                             <div class="col-md-4 mb-4">
-                                <label for="at">At</label>
-                                <input type="time" name="at" aria-label="at" class="form-control" required="required"/>
+                                <label for="start_at">At</label>
+                                <input type="time" name="start_at" aria-label="at" class="form-control" required="required"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 mb-4">
-                                <label for="to">To</label>
-                                <input type="text" name="to" class="form-control" placeholder="Leonding, Kornstraße 2" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
+                                <label for="go_to">To</label>
+                                <input type="text" name="go_to" class="form-control" placeholder="Leonding, Kornstraße 2" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-4">
-                                <label for="to">Seats</label>
+                                <label for="seats">Seats</label>
                                 <input type="number" name="seats" class="form-control" aria-label="To" aria-describedby="addon-wrapping" required="required"/>
                             </div>
                         </div>

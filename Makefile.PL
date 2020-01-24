@@ -12,7 +12,6 @@ all_from 'lib/PWA.pm';
 requires 'Catalyst::Runtime' => '5.90123';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
-requires 'Catalyst::Plugin::Session';
 requires 'Catalyst::View::JSON';
 requires 'Catalyst::Action::RenderView';
 requires 'Data::FormValidator';

@@ -4,18 +4,21 @@ use common::sense;
 
 use Moose;
 
-use PWA::Model::Ride;
-
 use Data::FormValidator;
+
+has 'model' => (
+    is  => 'ro',
+    isa => 'Object',
+);
 
 =head2 rides
 
 =cut
 
 sub rides {
-    my ($self, $model) = @_;
+    my ($self) = @_;
 
-    return map { PWA::Model::Ride->new( data => $_ ) } $model->get;
+    return $self->model->get_rides;
 }
 
 =head2 save_ride
@@ -23,9 +26,12 @@ sub rides {
 =cut
 
 sub save_ride {
-    my ($self, $model, $params) = @_;
+    my ($self, $params) = @_;
 
-    $model->add($params);
+    $params->{start_dt}  = sprintf("%s %s", delete $params->{start_on}, delete $params->{start_at});
+    $params->{driver_id} = 1;
+
+    $self->model->save_ride($params);
 
     return 1;
 }
@@ -37,7 +43,21 @@ sub save_ride {
 sub validate {
     my ($self, $params) = @_;
 
-    return Data::FormValidator->check($params, PWA::Model::Ride->new->validation_profile);
+    return Data::FormValidator->check($params, $self->validation_profile);
+}
+
+=head2 validation_profile
+
+=cut
+
+sub validation_profile {
+    return {
+        required => [qw(start_from start_at start_on go_to seats)],
+        msgs     => {
+            format  => '%s',
+            missing => 'missing',
+        }
+    }
 }
 
 1;

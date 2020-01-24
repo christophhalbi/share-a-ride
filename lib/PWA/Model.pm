@@ -8,16 +8,16 @@ has 'source' => (
     is => 'ro',
 );
 
-sub get {
+sub get_rides {
     my $self = shift;
 
-    return @{ $self->source->{rides} or [] };
+    return $self->source->resultset('Ride')->all;
 }
 
-sub add {
+sub save_ride {
     my ($self, $data) = @_;
 
-    push @{ $self->source->{rides} }, $data;
+    $self->source->resultset('Ride')->create($data);
 
     return;
 }

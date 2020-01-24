@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             json.results.forEach(function(result) {
 
-                td[0].textContent = 'Max';
-                td[1].textContent = result.from;
-                td[2].textContent = result.to;
-                td[3].textContent = result.on + ' ' + result.at;
+                td[0].textContent = result.driver;
+                td[1].textContent = result.start_from;
+                td[2].textContent = result.go_to;
+                td[3].textContent = result.start_dt;
                 td[4].textContent = result.seats;
 
                 var clone = document.importNode(t.content, true);

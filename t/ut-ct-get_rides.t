@@ -13,7 +13,7 @@ my $mocker = Mocker->new;
 subtest "get_rides empty" => sub {
 
     my $mock = $mocker->mock('PWA::Model',
-        get => sub {
+        get_rides => sub {
 
             return ();
         }
@@ -34,16 +34,14 @@ subtest "get_rides empty" => sub {
 subtest "get_rides result" => sub {
 
     my $mock = $mocker->mock('PWA::Model',
-        get => sub {
+        get_rides => sub {
 
-            return (
+            return PWA::Schema::ShareARide::Result::Ride->new(
                 {
-                    from   => 'Linz',
-                    to     => 'Leonding',
-                    driver => 'Max Mustermann',
-                    on     => '2019-01-01',
-                    at     => '11:00',
-                    seats  => 2,
+                    start_from => 'Linz',
+                    go_to      => 'Leonding',
+                    start_dt   => '2019-01-01 11:00',
+                    seats      => 2,
                 }
             );
         }
@@ -57,12 +55,10 @@ subtest "get_rides result" => sub {
         {
             results => [
                 {
-                    from   => 'Linz',
-                    to     => 'Leonding',
-                    driver => 'Max Mustermann',
-                    on     => '2019-01-01',
-                    at     => '11:00',
-                    seats  => 2,
+                    start_from => 'Linz',
+                    go_to      => 'Leonding',
+                    start_dt   => '2019-01-01 11:00',
+                    seats      => 2,
                 }
 
             ],

@@ -20,11 +20,11 @@ subtest "post_ride empty" => sub {
         from_json($response->decoded_content),
         {
             validation_errors => {
-                from  => 'missing',
-                to    => 'missing',
-                on    => 'missing',
-                at    => 'missing',
-                seats => 'missing',
+                start_from => 'missing',
+                go_to      => 'missing',
+                start_on   => 'missing',
+                start_at   => 'missing',
+                seats      => 'missing',
             },
         },
     );
@@ -32,12 +32,18 @@ subtest "post_ride empty" => sub {
 
 subtest "post_ride" => sub {
 
+    my $mock = $mocker->mock('PWA::Model',
+        save_ride => sub {
+
+        }
+    );
+
     my $response = request POST '/post_ride', [
-        from  => 'Linz',
-        to    => 'Leonding',
-        on    => '2019-01-01',
-        at    => '11:00',
-        seats => '2',
+        start_from => 'Linz',
+        go_to      => 'Leonding',
+        start_on   => '2019-01-01',
+        start_at   => '11:00',
+        seats      => '2',
     ];
     ok $response->is_success;
 

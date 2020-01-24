@@ -5,16 +5,6 @@ use namespace::autoclean;
 use PWA::BusinessLogic::Rides;
 use PWA::Model;
 
-has 'bl_rides' => (
-    is      => 'ro',
-    isa     => 'Object',
-    lazy    => 1,
-    default => sub {
-
-        return PWA::BusinessLogic::Rides->new;
-    }
-);
-
 BEGIN { extends 'Catalyst::Controller' }
 
 #
@@ -82,7 +72,7 @@ sub get_rides :Path('get_rides') :Args(0) {
 
     $c->stash({
         results => [
-            map { $_->as_json } $self->bl_rides->rides(PWA::Model->new( source => $c->session ))
+            map { $_->as_json } $self->business_logic($c)->rides
         ]
     });
 
@@ -96,14 +86,16 @@ sub get_rides :Path('get_rides') :Args(0) {
 sub post_ride :Path('post_ride') :Args(0) {
     my ( $self, $c ) = @_;
 
-    my ($validation_result) = $self->bl_rides->validate($c->req->body_parameters);
+    my $business_logic = $self->business_logic($c);
+
+    my ($validation_result) = $business_logic->validate($c->req->body_parameters);
     if ($validation_result->success) {
 
         my $valid = $validation_result->valid;
 
         $c->stash({
             validation_errors => {},
-            saved             => $self->bl_rides->save_ride(PWA::Model->new( source => $c->session ), $valid),
+            saved             => $business_logic->save_ride($valid),
         });
     }
     else {
@@ -112,6 +104,18 @@ sub post_ride :Path('post_ride') :Args(0) {
     }
 
     $c->forward('View::JSON');
+}
+
+=head2 business_logic
+
+=cut
+
+sub business_logic {
+    my ($self, $c) = @_;
+
+    my $model = PWA::Model->new( source => $c->model('DB') );
+
+    return PWA::BusinessLogic::Rides->new( model => $model );
 }
 
 =head2 favicon
