@@ -1,0 +1,26 @@
+
+share a ride
+
+
+development
+
+cha@linux-n1pu:~> ssh -L 3060:localhost:3060 beta.atikon.io to fake localhost
+
+https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool
+
+
+use-case
+
+as a driver: share a ride (start, time, destination, place, seats, route)
+
+as a passenger: find a ride
+
+as a community: share rides to prevent env polution and traffic jams
+
+
+
+technology:
+
+frontend: JS, Bootstrap
+
+backend: cataylst, psql
