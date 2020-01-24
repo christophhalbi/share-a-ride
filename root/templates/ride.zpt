@@ -8,13 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="theme-color" content="#3367D6"/>
 
-        <link rel="manifest" href="static/manifest.json"/>
+        <link rel="manifest" href="manifest.json"/>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="static/bootstrap.min.css"/>
 
         <script src="static/app.js" type="text/javascript"/>
-        <script src="static/sw.js" type="text/javascript"/>
 
     </head>
     <body class="bg-light">

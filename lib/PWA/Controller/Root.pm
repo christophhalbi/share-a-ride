@@ -39,7 +39,7 @@ PWA::Controller::Root - Root Controller for PWA
 
 =cut
 
-sub index :Path('index') :Args(0) {
+sub index :Path('') :Args(0) {
     my ( $self, $c ) = @_;
 
     $c->stash({
@@ -112,6 +112,42 @@ sub post_ride :Path('post_ride') :Args(0) {
     }
 
     $c->forward('View::JSON');
+}
+
+=head2 favicon
+
+=cut
+
+sub favicon :Path('favicon.ico') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    $c->serve_static_file($c->config->{root} . '/static/images/favicon.ico');
+
+    return;
+}
+
+=head2 manifest
+
+=cut
+
+sub manifest :Path('manifest.json') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    $c->serve_static_file($c->config->{root} . '/static/manifest.json');
+
+    return;
+}
+
+=head2 sw
+
+=cut
+
+sub sw :Path('sw.js') :Args(0) {
+    my ( $self, $c ) = @_;
+
+    $c->serve_static_file($c->config->{root} . '/static/sw.js');
+
+    return;
 }
 
 =head2 render
