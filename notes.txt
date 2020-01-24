@@ -24,3 +24,13 @@ technology:
 frontend: JS, Bootstrap
 
 backend: cataylst, psql
+
+
+
+next-up:
+
+use a proper database
+
+implement fetches
+
+implement push-notifications
