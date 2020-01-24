@@ -7,7 +7,13 @@ this.addEventListener('install', function(event) {
         caches.open(CACHE_NAME)
             .then(function(cache) {
 
-                console.log("install done");
+                return cache.addAll([
+                    '/index',
+                    '/jump_in',
+                    '/ride',
+                    'static/app.js',
+                    'static/bootstrap.min.css'
+                ]);
             })
     );
 });
