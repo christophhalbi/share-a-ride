@@ -67,6 +67,12 @@
                     </div>
                 </div>
             </div>
+
+            <div class="fixed-bottom">
+                <div class="alert alert-danger invisible" id="messageContainer" role="alert">
+                    Offline!
+                </div>
+            </div>
         </div>
     </body>
 </html>

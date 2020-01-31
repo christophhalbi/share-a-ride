@@ -6,7 +6,17 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+function UserInterface() {
+    this.messageContainer = document.querySelector('#messageContainer');
+
+    this.showOfflineMessage = function() {
+
+        this.messageContainer.classList.remove('invisible');
+    };
+}
+
 function SaveForm(form) {
+    UserInterface.call(this);
 
     this.form = form;
 
@@ -27,7 +37,14 @@ function SaveForm(form) {
             .then((response) => response.json())
             .then((json) => {
 
-                window.location = '/jump_in';
+                if (json.offline) {
+
+                    that.showOfflineMessage();
+                }
+                else {
+
+                    window.location = '/jump_in';
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -39,6 +56,7 @@ function SaveForm(form) {
 }
 
 function RidesOverview(container, rowTemplate) {
+    UserInterface.call(this);
 
     this.container   = container;
     this.rowTemplate = rowTemplate
@@ -53,7 +71,14 @@ function RidesOverview(container, rowTemplate) {
         .then((response) => response.json())
         .then((json) => {
 
-            that.render(json);
+            if (json.offline) {
+
+                that.showOfflineMessage();
+            }
+            else {
+
+                that.render(json);
+            }
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -97,6 +122,7 @@ function RidesOverview(container, rowTemplate) {
 }
 
 function Quicksearch(input, ridesOverview) {
+    UserInterface.call(this);
 
     this.input         = input;
     this.ridesOverview = ridesOverview;
@@ -113,7 +139,14 @@ function Quicksearch(input, ridesOverview) {
             .then((response) => response.json())
             .then((json) => {
 
-                that.ridesOverview.clear().render(json);
+                if (json.offline) {
+
+                    that.showOfflineMessage();
+                }
+                else {
+
+                    that.ridesOverview.clear().render(json);
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);

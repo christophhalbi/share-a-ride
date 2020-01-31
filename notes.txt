@@ -8,6 +8,8 @@ cha@linux-n1pu:~> ssh -L 3060:localhost:3060 beta.atikon.io to fake localhost
 
 https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool
 
+https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
+
 
 use-case
 
@@ -28,9 +30,5 @@ backend: cataylst, psql
 
 
 next-up:
-
-use a proper database
-
-implement fetches
 
 implement push-notifications
