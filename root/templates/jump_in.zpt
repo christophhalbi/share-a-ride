@@ -35,7 +35,7 @@
                     <h4 class="mb-3">Find a ride</h4>
                     <form>
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Quicksearch" aria-describedby="addon-wrapping" required="required"/>
+                            <input type="text" class="form-control" placeholder="Quicksearch" aria-describedby="addon-wrapping" required="required" id="quicksearch" data-uri="${uri_rides}"/>
                         </div>
                     </form>
                 </div>
