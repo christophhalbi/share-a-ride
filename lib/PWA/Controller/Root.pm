@@ -72,7 +72,7 @@ sub get_rides :Path('get_rides') :Args(0) {
 
     $c->stash({
         results => [
-            map { $_->as_json } $self->business_logic($c)->rides
+            map { $_->as_json } $self->business_logic($c)->rides($c->req->param('search'))
         ]
     });
 

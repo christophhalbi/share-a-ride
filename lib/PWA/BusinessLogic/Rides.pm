@@ -16,9 +16,9 @@ has 'model' => (
 =cut
 
 sub rides {
-    my ($self) = @_;
+    my ($self, $search) = @_;
 
-    return $self->model->get_rides;
+    return $self->model->get_rides($search);
 }
 
 =head2 save_ride

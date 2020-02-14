@@ -133,8 +133,13 @@ function Quicksearch(input, ridesOverview) {
 
         that.input.addEventListener('keyup', function(e) {
 
+            const formData = new FormData();
+
+            formData.append('search', that.input.value);
+
             fetch(that.input.dataset.uri, {
-                method: 'GET'
+                method: 'POST',
+                body: formData
             })
             .then((response) => response.json())
             .then((json) => {

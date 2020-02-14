@@ -9,9 +9,13 @@ has 'source' => (
 );
 
 sub get_rides {
-    my $self = shift;
+    my ($self, $search) = @_;
 
-    return $self->source->resultset('Ride')->all;
+    my $resultset = $self->source->resultset('Ride');
+
+    $resultset = $resultset->search_by($search) if $search;
+
+    return $resultset->all;
 }
 
 sub save_ride {

@@ -10,6 +10,8 @@ https://developers.google.com/web/ilt/pwa/lighthouse-pwa-analysis-tool
 
 https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
 
+https://developers.google.com/web/fundamentals/codelabs/push-notifications
+
 
 use-case
 
@@ -30,5 +32,11 @@ backend: cataylst, psql
 
 
 next-up:
+
+implement a proper search
+
+highlight search hits
+
+fix interface for mobile devices
 
 implement push-notifications
