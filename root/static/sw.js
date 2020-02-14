@@ -16,7 +16,9 @@ this.addEventListener('install', (event) => {
                     '/favicon.ico',
                     '/static/app.js',
                     '/static/bootstrap.min.css',
-                    '/static/images/icons-512.png'
+                    '/static/images/icons-512.png',
+                    '/static/images/1627473.svg',
+                    '/static/images/1627463.svg'
                 ]);
             })
     );

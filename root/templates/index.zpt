@@ -23,8 +23,20 @@
                 <p class="lead">super-cool app to share rides and save the planet!</p>
             </div>
             <div class="row">
-                <div class="col text-center"><a href="/ride">I ride</a></div>
-                <div class="col text-center"><a href="/jump_in">I want to jump in</a></div>
+                <div class="col text-center">
+                    <a href="/ride" title="I wanna share a ride">
+                        <img src="static/images/1627473.svg" alt="I wanna share a ride" width="50%" class="mb-3"/>
+                        <br/>
+                        <span>I wanna share a ride</span>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a href="/jump_in" title="I wanna jump in">
+                        <img src="static/images/1627463.svg" alt="I wanna jump in" width="50%" class="mb-3"/>
+                        <br/>
+                        <span>I wanna jump in</span>
+                    </a>
+                </div>
             </div>
         </div>
     </body>

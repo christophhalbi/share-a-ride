@@ -6,6 +6,8 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+const simulateOffline = false;
+
 function UserInterface() {
     this.messageContainer = document.querySelector('#messageContainer');
 
@@ -37,7 +39,7 @@ function SaveForm(form) {
             .then((response) => response.json())
             .then((json) => {
 
-                if (json.offline) {
+                if (json.offline || simulateOffline) {
 
                     that.showOfflineMessage();
                 }
@@ -71,7 +73,7 @@ function RidesOverview(container, rowTemplate) {
         .then((response) => response.json())
         .then((json) => {
 
-            if (json.offline) {
+            if (json.offline || simulateOffline) {
 
                 that.showOfflineMessage();
             }
@@ -144,7 +146,7 @@ function Quicksearch(input, ridesOverview) {
             .then((response) => response.json())
             .then((json) => {
 
-                if (json.offline) {
+                if (json.offline || simulateOffline) {
 
                     that.showOfflineMessage();
                 }

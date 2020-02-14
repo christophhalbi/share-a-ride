@@ -31,7 +31,7 @@
             </nav>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <h4 class="mb-3">Offer a ride</h4>
                     <form id="save_ride_form" method="post" tal:attributes="action uri_action">
                         <div class="row">
