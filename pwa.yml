@@ -3,3 +3,7 @@
 name: PWA
 
 default_view: Petal
+
+Model::FirebaseCloudMessaging:
+    url: <>
+    key: <>

@@ -12,6 +12,11 @@ https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker
 
 https://developers.google.com/web/fundamentals/codelabs/push-notifications
 
+https://www.codemag.com/Article/1901031/Implementing-Push-Notifications-in-Progressive-Web-Apps-PWAs-Using-Firebase
+
+https://console.firebase.google.com/?pli=1
+
+
 
 use-case
 

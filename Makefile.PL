@@ -15,6 +15,7 @@ requires 'Catalyst::Plugin::Static::Simple';
 requires 'Catalyst::View::JSON';
 requires 'Catalyst::Action::RenderView';
 requires 'Data::FormValidator';
+requires 'Config::Any';
 requires 'Moose';
 requires 'namespace::autoclean';
 requires 'Config::General'; # This should reflect the config file format you've chosen
